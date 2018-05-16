@@ -9,7 +9,7 @@ export default function Template({ data }) {
   return (
     <div>
       <Helmet title={`Running Blog - ${post.frontmatter.title}`} />
-      <Link to={'/shoe-reviews'}>⬅ Return to all reviews</Link>
+      <Link to={'/reviews'}>⬅ Return to all reviews</Link>
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </div>
   );

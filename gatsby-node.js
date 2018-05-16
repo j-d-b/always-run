@@ -18,6 +18,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                   title
                   date
                   path
+                  thumb
                 }
               }
             }

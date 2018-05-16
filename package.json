@@ -1,11 +1,8 @@
 {
-  "name": "gatsby-starter-blog-no-styles",
-  "description": "Starter Gatsby Blog No Styles",
+  "name": "always-run",
+  "description": "Running shoe review blog",
+  "author": "Jacob Brady",
   "private": true,
-  "author": "Noah Glusenkamp <noah.glusenkamp@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
-  },
   "dependencies": {
     "gatsby": "^1.8.12",
     "gatsby-link": "^1.6.8",
@@ -20,22 +17,15 @@
     "styled-normalize": "^4.0.0"
   },
   "devDependencies": {},
-  "homepage": "https://github.com/noahg/gatsby-starter-blog-no-styles#readme",
-  "keywords": [
-    "gatsby"
-  ],
+  "homepage": "https://github.com/j-d-b/always-run",
   "license": "MIT",
-  "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/noahg/gatsby-starter-blog-no-styles.git"
+    "url": "git+https://github.com/j-d-b/always-run.git"
   },
   "scripts": {
     "dev": "gatsby develop",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
-    "develop": "gatsby develop",
     "build": "gatsby build",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
