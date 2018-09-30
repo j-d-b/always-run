@@ -6,13 +6,14 @@ import { ThemeProvider } from 'styled-components';
 import styledNormalize from 'styled-normalize';
 
 import Box from '../components/Box.jsx';
-import Navbar from '../components/Navbar.jsx';
+import Header from '../components/Header/Header.jsx';
 import Footer from '../components/Footer.jsx';
 
 const theme = {
   main: '#365AA1',
   light: '#52A4E6',
-  accent: 'tomato'
+  accent: 'tomato',
+  navBreakpoint: '620px'
 };
 
 const setGlobalStyles = () => injectGlobal`
@@ -24,14 +25,25 @@ const setGlobalStyles = () => injectGlobal`
   }
 `;
 
-// heights in heightUnit
-const heightUnit = 'px';
-const navbarHeight = 60;
-const footerHeight = 36;
+// fixed header heights
+const navbarHeight = '60px';
+const navbarHeightRaw = 60;
+
+const titleHeight = '80px'; // on smaller displays, a title appears above the navbar
+const titleHeightRaw = 80;
+
+const footerHeight = '36px';
+const footerHeightRaw = 36;
 
 // make the footer stick to the bottom (based on the heights of header and footer ✨)
 const Wrapper = styled.div`
-  min-height: calc(100vh - ${navbarHeight + footerHeight + heightUnit});
+  min-height: calc(100vh - ${titleHeightRaw + navbarHeightRaw + footerHeightRaw + 'px'});
+  margin-top: ${titleHeightRaw + navbarHeightRaw + 'px'};
+
+  @media (min-width: ${theme.navBreakpoint}) {
+    margin-top: 0;
+    min-height: calc(100vh - ${navbarHeightRaw + footerHeightRaw + 'px'});
+  };
 `;
 
 // set styles, apply themeprovider, and setup nav, body, footer
@@ -41,13 +53,13 @@ export default function Template(props) {
   return (
     <ThemeProvider theme={theme}>
       <div>
-        <Navbar height={navbarHeight + heightUnit} />
+        <Header titleHeight={titleHeight} navbarHeight={navbarHeight} bgColor={theme.main} />
         <Wrapper>
-          <Box mt={navbarHeight + heightUnit}>
+          <Box mt={navbarHeight}>
             {props.children()}
           </Box>
         </Wrapper>
-        <Footer height={footerHeight + heightUnit} />
+        <Footer height={footerHeight} />
       </div>
     </ThemeProvider>
   );

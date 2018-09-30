@@ -6,7 +6,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
 
   return new Promise((resolve, reject) => {
-    const blogPost = path.resolve('./src/templates/shoe-review.jsx');
+    const shoeReview = path.resolve('./src/templates/shoe-review.jsx');
 
     resolve(
       graphql(
@@ -18,7 +18,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                   title
                   date
                   path
-                  thumb
                 }
               }
             }
@@ -34,7 +33,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         posts.forEach(post => {
           createPage({
             path: post.node.frontmatter.path,
-            component: blogPost,
+            component: shoeReview,
             context: {} // additional data can be passed via context
           });
         });

@@ -1,7 +1,7 @@
 ---
 title: "Inov-8 Roclite 290"
 path: "/reviews/inov8-roclite-290"
-thumb: "./roclite-in-palm.jpg"
+coverImage: "./roclite-in-palm.jpg"
 ---
 
 # Inov-8 Roclite 290 Review
@@ -21,6 +21,7 @@ The shank is very noticeable coming from a largely road shoe background, and the
 
 The midsole doesn't have much squish or fluffiness to it, and on the road most of the cushioning comes from the outsole lugs.
 
+![test image](./IMG_5587.jpg)
 
 
 

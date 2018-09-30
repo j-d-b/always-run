@@ -1,2 +1,13 @@
-# Empty Readme
-Trying to make a blog; only empty for now
+# Always Run
+My running and running shoe review blog, built with Gatsby.
+
+This bad boy is a true work
+
+## Getting started
+```
+npm i
+```
+
+```
+gatsby develop
+```
